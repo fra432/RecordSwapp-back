@@ -12,6 +12,7 @@ describe("Given a getUserCollection controller", () => {
     status: jest.fn().mockReturnThis(),
     json: jest.fn(),
   };
+
   describe("When invoked with an id of a user present in the database and a valid token", () => {
     test("Then it should call the responses's status method with 200 and the json method with the user collection", async () => {
       const expectedStatus = 200;
@@ -27,7 +28,6 @@ describe("Given a getUserCollection controller", () => {
         populate: jest.fn().mockReturnValue({
           username: "fra432",
           image: "",
-
           records_collection: {
             records: mockRecords,
           },
@@ -36,7 +36,7 @@ describe("Given a getUserCollection controller", () => {
 
       await getUserCollection(req, res);
 
-      expect(res.status).toHaveBeenLastCalledWith(expectedStatus);
+      expect(res.status).toHaveBeenCalledWith(expectedStatus);
       expect(res.json).toHaveBeenCalledWith(expectedJsonResponse);
     });
   });

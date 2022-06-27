@@ -2,7 +2,6 @@ const { default: mongoose } = require("mongoose");
 const request = require("supertest");
 const connectDB = require("../database");
 const User = require("../database/models/User");
-// const mockRecords = require("../mocks/mockRecords");
 const { mockNewUsers } = require("../mocks/mockUsers");
 const app = require("../server/index");
 
